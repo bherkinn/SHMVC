@@ -1,0 +1,87 @@
+/*---------------------------MENU---------------------------*/
+.menu{
+	background-color: #2455be;
+	width: 220px;
+	float: left;
+	height: 800px;
+	position: fixed;
+}
+
+.ocultar{
+	transition: margin-left 0.5s;
+	margin-left: -220px;
+	
+}
+.mostrar{
+	transition: margin-left 0.5s;
+	margin-left:0px;
+}
+
+/*---------------------------CONTENEDOR---------------------------*/
+.contenedor{
+	position: relative;
+	height: 100%;
+}
+.reducir{
+	transition: width 0.5s,margin-left 0.5s;
+	width: 100%-220px;
+	margin-left: 220px;
+	height: 100%;
+}
+.ampliar{
+	transition: width 0.5s,margin-left 0.5s;
+	width: 100%+220px;
+	margin-left: 0px;
+	height: 100%;
+}
+/*-------------------------NAVEGADOR------------------------------*/
+.nav{
+	width: 220px;
+}
+.nav>ul{
+	margin-left:-40px;
+	width: 260px;
+}
+.nav>ul>li{
+	list-style: none;
+	width: 100% !important;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.nav>ul>li>a{
+	width: 100% !important;
+	padding: 8px 5px 8px 5px;
+	text-decoration: none;
+	color: #fff;
+	margin:2px 4px 2px 4px;
+	border-radius: 4px;
+	/*text-align: center;*/
+}
+.nav>ul>li>a:hover{
+	background-color: #2F65D9;
+}
+.nav>ul>li>ul{
+	display: none;
+}
+.nav>ul>li>ul>li{
+	/*display: flex;*/
+	list-style: none;
+	min-width: 100% !important;
+}
+.nav>ul>li>ul>li>a{
+	/*display: flex;*/
+	
+}
+
+.izquierda{
+	float: left;
+	margin-right: 10px;
+	margin-left:10px;
+	margin-top: 4px;
+}
+.derecha{
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+}
