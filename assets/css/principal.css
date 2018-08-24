@@ -18,6 +18,7 @@ header{
 	color: #fff;
 	border: 1.5px solid #fff;
 	border-radius: 4px;
+	cursor: pointer;
 }
 .titulo{
 	color: #fff;

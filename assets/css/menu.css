@@ -3,7 +3,7 @@
 	background-color: #2455be;
 	width: 220px;
 	float: left;
-	height: 800px;
+	/*height: 800px;*/
 	position: fixed;
 }
 
@@ -37,16 +37,20 @@
 /*-------------------------NAVEGADOR------------------------------*/
 .nav{
 	width: 220px;
+	height: 100vh;
 }
 .nav>ul{
+	height: 100%;
 	margin-left:-40px;
 	width: 260px;
+	overflow-y: auto;
 }
 .nav>ul>li{
 	list-style: none;
 	width: 100% !important;
 	display: flex;
 	flex-wrap: wrap;
+	position: relative;
 	
 }
 .nav>ul>li>a{
@@ -60,18 +64,22 @@
 }
 .nav>ul>li>a:hover{
 	background-color: #2F65D9;
+	cursor: pointer;
 }
 .nav>ul>li>ul{
 	display: none;
+	margin-left:-40px;
+	width: 260px !important;
 }
 .nav>ul>li>ul>li{
-	/*display: flex;*/
+	display:flex;
 	list-style: none;
 	min-width: 100% !important;
 }
 .nav>ul>li>ul>li>a{
-	/*display: flex;*/
-	
+	min-width: 100% !important;
+	padding: 5px;
+	color:#E6F6FF;
 }
 
 .izquierda{
@@ -84,4 +92,12 @@
 	float: right;
 	margin-right: 5px;
 	margin-top: 5px;
+}
+
+.titulo-sub-menu{
+	justify-content: center;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
 }

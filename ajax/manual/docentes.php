@@ -1,5 +1,5 @@
 <?php 
-	require_once("../../models/docentes_manual.php");
+	require_once("../../models/manual/docentes_manual.php");
 
 	$accion=$_GET["accion"];
 	$o=new Docentes_Manual();

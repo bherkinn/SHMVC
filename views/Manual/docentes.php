@@ -6,21 +6,25 @@
 	<title>M-Docentes</title>
 
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+	<?php 
+		require_once("views/links.html");
+	 ?>
+	 <link rel="stylesheet" type="text/css" href="assets/css/manual/aulas.css">
+	 <link rel="stylesheet" type="text/css" href="assets/css/comun-tablas.css">
 	<!-- **************************************CSS************************************* -->
-	<link rel="stylesheet" type="text/css" href="views/Librerias/bootstrap4/css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="views/Librerias/bootstrap4/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="views/Librerias/css/comun-tablas.css">
 	<link rel="stylesheet" type="text/css" href="views/Librerias/css/menu.css">
     <link rel="stylesheet" type="text/css" href="views/Librerias/css/fuente.css">
 	<link rel="stylesheet" type="text/css" href="views/Librerias/css/docentes.css">
 	<link rel="stylesheet" type="text/css" href="views/Librerias/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
 	<link rel="stylesheet" type="text/css" href="views/Librerias/select2/css/select2.min.css">
-
+	-->
 	<!-- ***************************************JS************************************* -->
-	<script type="text/javascript" src="views/Librerias/jquery-3.3.1.min.js"></script>
+	<!-- <script type="text/javascript" src="views/Librerias/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="views/Librerias/bootstrap4/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="views/Librerias/select2/js/select2.min.js"></script>
-	<script type="text/javascript" src="views/Librerias/bootstrap4/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="views/Librerias/bootstrap4/js/bootstrap.bundle.min.js"></script> -->
 	<!-- <script type="text/javascript" src="../../librerias/js/fancywebsocket.js"></script> -->
 <!-- 	<script type="text/javascript" src="librerias/jqueryPlugintipsy/js/jquery.tipsy.js"></script> -->
 
@@ -59,14 +63,16 @@
 
 <body>
 		<?php 
-         require_once("views/menu.php");
+         require_once("views/menu.html");
       ?>
 
-		<div id="contenedor" class="contenedor-tapar">
-		<center>
-			<div class="titulo-tabla">DOCENTES - MANUAL</div>
-		</center>
-		<div class="centrar">  
+		<div id="contenedor" class="contenedor ampliar">	
+		<header>
+	 		<button id="btnmenu" class="fas fa-bars btnmenu"></button>
+	 		<div class="titulo">DOCENTES - MANUAL</div>
+	 		<div></div>
+	 	</header>
+		<div class="contenedor-botones-manual">
 		<select id="select-docentes">
 					
 		</select>
@@ -78,7 +84,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="container-fluid">
 				<center>
-					<div id="tabla" class="">
+					<div id="tabla" class="table-responsive">
 
 					</div>
 				</center>
@@ -99,7 +105,7 @@
 			var cantidad="";
 			var tabla=document.createElement("table");
 			tabla.setAttribute("id","tabla-docentes");
-			tabla.setAttribute("class","table-responsive-horario border rounded");
+			tabla.setAttribute("class","border rounded");
 			tabla.setAttribute("border","3");
 		    //tabla.style.border="1px solid gray";
 		    var content=document.getElementById("tabla");
@@ -177,12 +183,10 @@
 
 
     </style>
-		
-	<script type="text/javascript" src="views/Librerias/js/comun.js" ></script>
-
+	
 	<script type="text/javascript">
 
-		$.get("views/Anexos/docentes.php",{accion:"cboPeriodo"},
+		$.get("ajax/manual/docentes.php",{accion:"cboPeriodo"},
             function(data){
                 cboperiodo=JSON.parse(data);
                 cantidadcbp=Object.keys(cboperiodo).length;
@@ -191,7 +195,7 @@
                     $("#cboperiodo").append("<option value="+cboperiodo[i]["perAcademico"]+">"+cboperiodo[i]["perAcademico"]+"</option>");
                 }
 
-                $.get("views/Anexos/docentes.php",{accion:"cboDocentes"},
+                $.get("ajax/manual/docentes.php",{accion:"cboDocentes"},
 	            function(data){
             	cbodocente=JSON.parse(data);
             	cantidaddocente=Object.keys(cbodocente).length;
@@ -207,7 +211,7 @@
 		function mostrarDocentes(){
 			iddocente=$("#select-docentes").val();
         	periodo=$("#cboperiodo").val();
-			$.get("views/Anexos/docentes.php",{accion:"horarioDocente",iddocente:iddocente,periodo:periodo},
+			$.get("ajax/manual/docentes.php",{accion:"horarioDocente",iddocente:iddocente,periodo:periodo},
 				function(data){
 				var hdocentes=JSON.parse(data);
 				
@@ -283,7 +287,10 @@
 			}
 		});
 	</script>
-	<script type="text/javascript" src="views/Librerias/js/manual/docentes.js"></script>
+	<script type="text/javascript" src="assets/js/menu.js"></script>
+	<script type="text/javascript" src="assets/js/manual/docentes.js"></script>
+
+	
 
 </body>
 

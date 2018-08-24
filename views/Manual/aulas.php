@@ -40,7 +40,7 @@
 	 		<div class="titulo">AULAS - MANUAL</div>
 	 		<div></div>
 	 	</header>
-		<div class="contenedor-botones-aulas">
+		<div class="contenedor-botones-manual">
 				<select id="select-aulas" class="cboaulas">
 				</select>
 				<select id="cboperiodo" class="cboperiodo">
@@ -51,9 +51,6 @@
 			<div class="container-fluid">
 				<center>
 					<div id="tabla" class="table-responsive">
-
-			
-
 					</div>
 				</center>
 		</div>
